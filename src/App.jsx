@@ -63,49 +63,49 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-dvh bg-[#212021]">
-      <article className="flex min-h-dvh w-full flex-col overflow-hidden bg-white">
-        <header className="relative flex flex-col items-center rounded-b-[14px] bg-[#212021] px-6 pb-40 pt-[max(2.75rem,env(safe-area-inset-top))]">
+    <main className="h-dvh bg-[#212021]">
+      <article className="flex h-dvh w-full flex-col overflow-hidden bg-white">
+        <header className="relative flex shrink-0 flex-col items-center rounded-b-[14px] bg-[#212021] px-6 pb-24 pt-[max(1.25rem,env(safe-area-inset-top))]">
           <img
             src="/tapme-logo.webp"
             alt="TapMe"
-            width={56}
-            height={56}
+            width={40}
+            height={40}
             decoding="async"
-            className="h-14 w-14 object-contain"
+            className="h-10 w-10 object-contain"
           />
-          <h1 className="mt-10 text-[21px] font-bold tracking-[0.04em] text-white">
+          <h1 className="mt-4 text-[17px] font-bold tracking-[0.04em] text-white">
             DIGITAL EMPLOYEE CARD
           </h1>
           <img
             src={employee.photo}
             alt={`Portrait of ${employee.name}`}
-            width={200}
-            height={232}
+            width={150}
+            height={174}
             fetchPriority="high"
             decoding="async"
-            className="absolute top-full left-1/2 w-[200px] -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-full left-1/2 w-[150px] -translate-x-1/2 -translate-y-1/2"
           />
         </header>
 
-        <section className="flex flex-1 flex-col items-center px-6 pt-[8.25rem] pb-8">
-          <h2 className="flex items-center gap-2 text-[26px] font-bold tracking-tight text-[#161616]">
+        <section className="flex min-h-0 flex-1 flex-col items-center justify-center px-6 pt-[5.5rem] pb-3">
+          <h2 className="flex items-center gap-2 text-[22px] font-bold tracking-tight text-[#161616]">
             {employee.name}
             <img
               src="/checkmark.webp"
               alt="Verified"
-              width={28}
-              height={28}
+              width={24}
+              height={24}
               decoding="async"
-              className="h-7 w-7 shrink-0 object-contain"
+              className="h-6 w-6 shrink-0 object-contain"
             />
           </h2>
 
-          <div className="mt-4 flex w-full max-w-[360px] items-center justify-center gap-2">
+          <div className="mt-3 flex w-full max-w-[360px] items-center justify-center gap-2">
             <button
               type="button"
               onClick={saveContact}
-              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#111111] px-3 py-2.5 text-[12px] font-bold tracking-wide whitespace-nowrap text-white"
+              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#111111] px-3 py-2 text-[12px] font-bold tracking-wide whitespace-nowrap text-white"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -121,7 +121,7 @@ export default function App() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#25D366] px-3 py-2.5 text-[12px] font-bold tracking-wide whitespace-nowrap text-white no-underline"
+              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#25D366] px-3 py-2 text-[12px] font-bold tracking-wide whitespace-nowrap text-white no-underline"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -167,7 +167,7 @@ export default function App() {
             </a>
           </div>
 
-          <dl className="mt-6 grid w-max max-w-full grid-cols-[max-content_max-content_max-content] gap-x-2.5 gap-y-4 text-[15px] leading-tight text-[#1a1a1a]">
+          <dl className="mt-4 grid w-max max-w-full grid-cols-[max-content_max-content_max-content] gap-x-2.5 gap-y-2.5 text-[14px] leading-tight text-[#1a1a1a]">
             {details.map((row) => (
               <div key={row.label} className="contents">
                 <dt className="font-bold">{row.label}</dt>
@@ -190,7 +190,7 @@ export default function App() {
           </dl>
         </section>
 
-        <p className="px-6 pb-3 text-center text-[11px] leading-relaxed text-[#666666]">
+        <p className="shrink-0 px-6 pb-2 text-center text-[10px] leading-snug text-[#666666]">
           For more info, WhatsApp us at{" "}
           <a href="https://wa.me/250787391113" className="text-inherit underline-offset-2">
             0787 391 113
@@ -206,17 +206,17 @@ export default function App() {
           . Based in Kigali, Rwanda.
         </p>
 
-        <footer className="flex shrink-0 items-center justify-center gap-2 bg-[#212021] px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <footer className="flex shrink-0 items-center justify-center gap-2 bg-[#212021] px-6 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           <img
             src="/verified.webp"
             alt=""
-            width={20}
-            height={20}
+            width={18}
+            height={18}
             decoding="async"
-            className="h-5 w-5 object-contain"
+            className="h-[18px] w-[18px] object-contain"
             aria-hidden="true"
           />
-          <p className="text-[13px] font-semibold tracking-wide text-white">
+          <p className="text-[12px] font-semibold tracking-wide text-white">
             Protected Privacy
           </p>
         </footer>
