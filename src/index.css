@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "MTN Brighter Sans";
+  src: url("/MTNBrighterSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MTN Brighter Sans";
+  src: url("/MTNBrighterSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #212021;
+  font-family: "MTN Brighter Sans", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

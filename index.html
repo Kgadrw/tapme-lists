@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#212021" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="TapMe" />
+    <link rel="icon" type="image/png" href="/tapme-logo.png" />
+    <link rel="shortcut icon" type="image/png" href="/tapme-logo.png" />
+    <link rel="apple-touch-icon" href="/tapme-logo.png" />
+    <link
+      rel="preload"
+      as="font"
+      href="/MTNBrighterSans-Regular.ttf"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/MTNBrighterSans-Bold.ttf"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="preload" as="image" href="/tapme-logo.webp" type="image/webp" />
+    <meta
+      name="description"
+      content="TapMe digital employee card. Contact: WhatsApp 0787 391 113, call 0799 646 246, email tapmeltd@gmail.com. Based in Kigali, Rwanda."
+    />
+    <meta property="og:site_name" content="TapMe" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="/tapme-logo.png" />
+    <title>TapMe</title>
+    <script>
+      (function () {
+        var cards = {
+          "00-0001": {
+            name: "Gad KALISA",
+            email: "kalisagad05@gmail.com",
+            tel: "+250 7919 998 365",
+            photo: "/0001.webp",
+          },
+          "00-0003": {
+            name: "Jennifer NYANGOMA",
+            email: "jennifernyangoma6@gmail.com",
+            tel: "+250 798 540 820",
+            photo: "/0003.webp",
+          },
+        };
+
+        var pathId = location.pathname.replace(/^\/+|\/+$/g, "");
+        var queryId = new URLSearchParams(location.search).get("id");
+        var id = (pathId && cards[pathId] && pathId) || (queryId && cards[queryId] && queryId) || "00-0001";
+        var person = cards[id];
+
+        var title = person.name + " | " + person.email + " | " + person.tel;
+        document.title = title;
+
+        var desc = document.querySelector('meta[name="description"]');
+        if (desc) {
+          desc.setAttribute(
+            "content",
+            person.name +
+              " — TapMe. Email " +
+              person.email +
+              ", Tel " +
+              person.tel +
+              ". WhatsApp 0787 391 113, call 0799 646 246, email tapmeltd@gmail.com. Kigali, Rwanda."
+          );
+        }
+
+        var ogTitle = document.createElement("meta");
+        ogTitle.setAttribute("property", "og:title");
+        ogTitle.content = title;
+        document.head.appendChild(ogTitle);
+
+        var ogDesc = document.createElement("meta");
+        ogDesc.setAttribute("property", "og:description");
+        ogDesc.content = person.name + " · " + person.email + " · " + person.tel;
+        document.head.appendChild(ogDesc);
+
+        var preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = person.photo;
+        preload.type = "image/webp";
+        preload.fetchPriority = "high";
+        document.head.appendChild(preload);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
